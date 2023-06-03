@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FourDrift | Comparativo</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="header-left dash-header">
+
+        <h1>
+            <img src="../assets/logo/agoravai.png" alt="logo4drift-esquerda">
+        </h1>
+
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+
+        <div class="btn-nav">
+            <h3>Aquários</h3>
+        </div>
+
+        <div class="btn-nav-white">
+            <a href="./dashboard.html">
+                <h3>Gráficos</h3>
+            </a>
+        </div>
+
+        <div class="btn-nav-white">
+            <a href="./mural.html">
+                <h3>Mural de Avisos</h3>
+            </a>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+
+    </div>
+    <div style="
+         display: flex;
+         justify-content: space-evenly; 
+         align-items: center;
+         flex-direction: row;
+         width: 100vw;
+         padding-left: 10%;
+         height: fit-content;">
+
+        <div style="
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 300px;
+            border-radius: 20px;" class="piloto_1" id="piloto_2">
+
+            <h1 style="color: rgb(0, 0, 0);"> Escolha o Piloto 1 </h1>
+
+            <select  id="combo1">
+                <option value="0">Selecione o Piloto</option>
+                <option value="1">Adam LZ</option>
+                <option value="2">Odi Bakchis</option>
+                <option value="3">Chelsea Denofa</option>
+                <option value="4">Chris Forsberg</option>
+                <option value="5">Darren Kelly</option>
+                <option value="6">Dean Kearney</option>
+                <option value="7">Diego Higa</option>
+                <option value="8">Dylan Hughes</option>
+                <option value="9">Frederic Aasbo</option>
+                <option value="10">Forest Wang</option>
+                <option value="11">James Deane</option>
+                <option value="12">Ryan Tuerck</option>
+                <option value="13">Vaughn Gittin Jr</option>
+                <option value="14">Matt Field</option>
+                <option value="15">Ken Gushi</option>
+                <option value="16">Jonathan Castro</option>
+            </select>
+
+            
+                <div style="height: 80px; width: 15px;" id="comparacao1">
+                </div>
+            
+
+            <button style="
+                    justify-content: center;
+                    align-items: center;" onclick="piloto_one()">
+                Selecione
+            </button>
+
+        </div>
+
+
+        <div style="
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 300px;
+            border-radius: 20px;" class="piloto_2" id="piloto_2">
+
+            <h1 style="color: rgb(0, 0, 0);"> Escolha o Piloto 2 </h1>
+
+
+            <select  id="combo2">
+                <option value="0">Selecione o Piloto</option>
+                <option value="1">Adam LZ</option>
+                <option value="2">Odi Bakchis</option>
+                <option value="3">Chelsea Denofa</option>
+                <option value="4">Chris Forsberg</option>
+                <option value="5">Darren Kelly</option>
+                <option value="6">Dean Kearney</option>
+                <option value="7">Diego Higa</option>
+                <option value="8">Dylan Hughes</option>
+                <option value="9">Frederic Aasbo</option>
+                <option value="10">Forest Wang</option>
+                <option value="11">James Deane</option>
+                <option value="12">Ryan Tuerck</option>
+                <option value="13">Vaughn Gittin Jr</option>
+                <option value="14">Matt Field</option>
+                <option value="15">Ken Gushi</option>
+                <option value="16">Jonathan Castro</option>
+            </select>
+
+            <div>
+                <span id="comparacao2">
+                </span>
+            </div>
+
+            <button style="
+                justify-content: center;
+                align-items: center;" onclick="piloto_two()">
+                Selecione
+            </button>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function piloto_one() {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+        var piloto = Number(combo1.value);
+
+        console.log(piloto);
+
+        // Enviando o valor da nova input
+        // fetch("/comparativo/piloto_one/", {
+        //     method: "GET",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }).then(function (resposta) {
+            fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
+            console.log("resposta: ", response);
+
+            if (response.ok) {
+
+                response.json().then(function (resposta) {
+                    console.log("resposta = obtida", resposta)
+                    var respostaJSON = JSON.stringify(resposta)
+                    comparacao1.innerHTML = `${respostaJSON}`;
+                })
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                // setTimeout(() => {
+                //     window.location = "login.html";
+                // }, "2000")
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar comparar!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        }
+    }
+
+
+    function piloto_two() {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+        var piloto = Number(combo2.value);
+
+        console.log(piloto);
+
+        // Enviando o valor da nova input
+        // fetch("/comparativo/piloto_one/", {
+        //     method: "GET",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }).then(function (resposta) {
+            fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
+            console.log("resposta: ", response);
+
+            if (response.ok) {
+
+                response.json().then(function (resposta) {
+                    console.log("resposta obtida", resposta)
+                    comparacao2.innerHTML = `${resposta}`;
+                })
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                // setTimeout(() => {
+                //     window.location = "login.html";
+                // }, "2000")
+
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar comparar!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        }
+    }
+</script>

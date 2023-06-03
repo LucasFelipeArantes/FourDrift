@@ -190,6 +190,16 @@ body {
     flex-direction: column;
     justify-content: start;
   }
+
+  .pil_fav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: 2px solid red;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+  }
   
   .botao {
     cursor: pointer;

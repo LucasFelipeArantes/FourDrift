@@ -82,6 +82,29 @@
                         <span>Confirmação da Senha:</span>
                         <input id="confirmacao_senha_input" type="password" placeholder="******">
                     </div>
+                    
+                    <span>Escolha seu piloto favorito:</span>
+                    <div class="pil_fav">
+                        <select style="height: 36px;border-radius: 10px;" name="PilotoFavorito" id="PilotoFavorito">
+                            <option value="0">Piloto Favorito</option>
+                            <option value="1">Adam LZ</option>
+                            <option value="2">Odi Bakchis</option>
+                            <option value="3">Chelsea Denofa</option>
+                            <option value="4">Chris Forsberg</option>
+                            <option value="5">Darren Kelly</option>
+                            <option value="6">Dean Kearney</option>
+                            <option value="7">Diego Higa</option>
+                            <option value="8">Dylan Hughes</option>
+                            <option value="9">Frederic Aasbo</option>
+                            <option value="10">Forest Wang</option>
+                            <option value="11">James Deane</option>
+                            <option value="12">Ryan Tuerck</option>
+                            <option value="13">Vaughn Gittin Jr</option>
+                            <option value="14">Matt Field</option>
+                            <option value="15">Ken Gushi</option>
+                            <option value="16">Jonathan Castro</option>
+                    </select>
+                </div>
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
 
                 </div>
@@ -118,8 +141,9 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var PilotoFavoritoVar = PilotoFavorito.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || PilotoFavorito == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -141,7 +165,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                PilotoFavoritoServer: PilotoFavoritoVar 
             })
         }).then(function (resposta) {
 

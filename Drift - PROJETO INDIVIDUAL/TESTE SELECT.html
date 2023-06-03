@@ -7,22 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <select onclick="pilotos1()" id="pil_1">
+    <select id="pil_1">
        
         <option value="Selecione">Selecione</option>
-        <option id="Aasbo">Frederic Aasbo</option>
+        <option value="Aasbo">1</option>
         <option value="Tuerck">Ryan Tuerck</option>
         <option value="Higa">Diego Higa</option>
     </select>
+
+    <button onclick="envianelson()">
+        Enviar
+    </button>
 
     <p id="p_noia"></p>
 </body>
 </html>
 <script>
 
-    function pilotos1 () {
-        var i = 1;
-        if (Option == "Aasbo") {
+    function envianelson() {
+        
+        if (pil_1 == "1") {
             p_noia.innerHTML = `ihaaaaaaaaaa`
         }
     }
