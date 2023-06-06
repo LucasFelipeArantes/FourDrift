@@ -2,12 +2,18 @@
 <html lang="pt">
 
 <head>
+    <link rel="shortcut icon" href="../assets/logo/ri (7).png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FourDrift | Comparativo</title>
+    <script src="../js/funcoes.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;800&display=swap" rel="stylesheet">
 </head>
+
 
 <body>
 
@@ -21,126 +27,153 @@
             <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
 
+        <div class="btn-nav-white">
+            <a href="pilotofavorito.html">
+                <h3>Piloto Favorito</h3>
+            </a>
+        </div>
+
         <div class="btn-nav">
-            <h3>Aquários</h3>
-        </div>
-
-        <div class="btn-nav-white">
-            <a href="./dashboard.html">
-                <h3>Gráficos</h3>
+            <a href="./Comparativo.html">
+                <h3>Comparativo Pilotos</h3>
             </a>
         </div>
 
-        <div class="btn-nav-white">
-            <a href="./mural.html">
-                <h3>Mural de Avisos</h3>
-            </a>
-        </div>
 
         <div class="btn-logout" onclick="limparSessao()">
             <h3>Sair</h3>
         </div>
 
     </div>
-    <div style="
+
+    <div class="tela">
+
+        <h1 class="titulinho">Faça a comparação entre dois pilotos!</h1>
+
+        <div style="
          display: flex;
-         justify-content: space-evenly; 
+         justify-content: center; 
          align-items: center;
          flex-direction: row;
          width: 100vw;
-         padding-left: 10%;
-         height: fit-content;">
+         height: 510px;
+         gap: 50px;
+         padding: 0 0 0 21%;">
 
-        <div style="
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            height: 300px;
-            border-radius: 20px;" class="piloto_1" id="piloto_2">
 
-            <h1 style="color: rgb(0, 0, 0);"> Escolha o Piloto 1 </h1>
+            <div class="piloto_1" id="piloto_1">
 
-            <select  id="combo1">
-                <option value="0">Selecione o Piloto</option>
-                <option value="1">Adam LZ</option>
-                <option value="2">Odi Bakchis</option>
-                <option value="3">Chelsea Denofa</option>
-                <option value="4">Chris Forsberg</option>
-                <option value="5">Darren Kelly</option>
-                <option value="6">Dean Kearney</option>
-                <option value="7">Diego Higa</option>
-                <option value="8">Dylan Hughes</option>
-                <option value="9">Frederic Aasbo</option>
-                <option value="10">Forest Wang</option>
-                <option value="11">James Deane</option>
-                <option value="12">Ryan Tuerck</option>
-                <option value="13">Vaughn Gittin Jr</option>
-                <option value="14">Matt Field</option>
-                <option value="15">Ken Gushi</option>
-                <option value="16">Jonathan Castro</option>
-            </select>
+                <div class="container_piloto1">
 
-            
-                <div style="height: 80px; width: 15px;" id="comparacao1">
+                    <h1 style="color: rgb(255, 255, 255);"> Escolha o Piloto 1 </h1>
+
+
+                    <select id="combo1">
+                        <option value="0">Selecione o Piloto</option>
+                        <option value="1">Adam LZ</option>
+                        <option value="2">Odi Bakchis</option>
+                        <option value="3">Chelsea Denofa</option>
+                        <option value="4">Chris Forsberg</option>
+                        <option value="5">Darren Kelly</option>
+                        <option value="6">Dean Kearney</option>
+                        <option value="7">Diego Higa</option>
+                        <option value="8">Dylan Hughes</option>
+                        <option value="9">Frederic Aasbo</option>
+                        <option value="10">Forest Wang</option>
+                        <option value="11">James Deane</option>
+                        <option value="12">Ryan Tuerck</option>
+                        <option value="13">Vaughn Gittin Jr</option>
+                        <option value="14">Matt Field</option>
+                        <option value="15">Ken Gushi</option>
+                        <option value="16">Jonathan Castro</option>
+                    </select>
+
+
+                    <div id="comparacao1">
+                    </div>
+
+
+                    <button id="bt_selec" onclick="piloto_one()">
+                        Selecione
+                    </button>
+
                 </div>
-            
 
-            <button style="
-                    justify-content: center;
-                    align-items: center;" onclick="piloto_one()">
-                Selecione
-            </button>
+                <div id="imagem_piloto1">
+                </div>
 
-        </div>
-
-
-        <div style="
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            height: 300px;
-            border-radius: 20px;" class="piloto_2" id="piloto_2">
-
-            <h1 style="color: rgb(0, 0, 0);"> Escolha o Piloto 2 </h1>
-
-
-            <select  id="combo2">
-                <option value="0">Selecione o Piloto</option>
-                <option value="1">Adam LZ</option>
-                <option value="2">Odi Bakchis</option>
-                <option value="3">Chelsea Denofa</option>
-                <option value="4">Chris Forsberg</option>
-                <option value="5">Darren Kelly</option>
-                <option value="6">Dean Kearney</option>
-                <option value="7">Diego Higa</option>
-                <option value="8">Dylan Hughes</option>
-                <option value="9">Frederic Aasbo</option>
-                <option value="10">Forest Wang</option>
-                <option value="11">James Deane</option>
-                <option value="12">Ryan Tuerck</option>
-                <option value="13">Vaughn Gittin Jr</option>
-                <option value="14">Matt Field</option>
-                <option value="15">Ken Gushi</option>
-                <option value="16">Jonathan Castro</option>
-            </select>
-
-            <div>
-                <span id="comparacao2">
-                </span>
             </div>
 
-            <button style="
-                justify-content: center;
-                align-items: center;" onclick="piloto_two()">
-                Selecione
-            </button>
 
+            <div class="piloto_2" id="piloto_2">
+
+                <div class="container_piloto2">
+
+                    <h1 style="color: rgb(255, 255, 255);"> Escolha o Piloto 2 </h1>
+
+
+
+                    <select id="combo2">
+                        <option value="0">Selecione o Piloto</option>
+                        <option value="1">Adam LZ</option>
+                        <option value="2">Odi Bakchis</option>
+                        <option value="3">Chelsea Denofa</option>
+                        <option value="4">Chris Forsberg</option>
+                        <option value="5">Darren Kelly</option>
+                        <option value="6">Dean Kearney</option>
+                        <option value="7">Diego Higa</option>
+                        <option value="8">Dylan Hughes</option>
+                        <option value="9">Frederic Aasbo</option>
+                        <option value="10">Forest Wang</option>
+                        <option value="11">James Deane</option>
+                        <option value="12">Ryan Tuerck</option>
+                        <option value="13">Vaughn Gittin Jr</option>
+                        <option value="14">Matt Field</option>
+                        <option value="15">Ken Gushi</option>
+                        <option value="16">Jonathan Castro</option>
+                    </select>
+
+
+                    <div id="comparacao2">
+                    </div>
+
+
+                    <button id="bt_selec" onclick="piloto_two()">
+                        Selecione
+                    </button>
+                </div>
+
+                <div id="imagem_piloto2">
+                </div>
+
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+    var imagem_carro = [
+        `<img class="imagem_plotar" src="../assets/carrosVetor/AdamLZ.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/AurimasBakchis.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/ChelseaDeNofa.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/ChrisForsberg.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/DarrenKelly.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/DeanKearney.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/diego3.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/DylanHughes.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/FredricAasbo.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/ForrestWang.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/JamesDeane.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/RyanTuerck.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/VaughnGittinJr.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/MattField.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/KenGushi.jpg" >`,
+        `<img class="imagem_plotar" src="../assets/carrosVetor/jonathanCastro.jpeg" >`
+    ];
 
     function piloto_one() {
 
@@ -156,15 +189,22 @@
         //         "Content-Type": "application/json"
         //     }
         // }).then(function (resposta) {
-            fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
             console.log("resposta: ", response);
 
             if (response.ok) {
 
                 response.json().then(function (resposta) {
                     console.log("resposta = obtida", resposta)
+                    console.log(resposta)
                     var respostaJSON = JSON.stringify(resposta)
-                    comparacao1.innerHTML = `${respostaJSON}`;
+                    comparacao1.innerHTML = `Nome: ${resposta.nome}<br>
+                                            Idade: ${resposta.idade}<br>
+                                            Nacionalidade: ${resposta.nacionalidade}<br>
+                                            Carro: ${resposta.modelo}<br>
+                                            Marca: ${resposta.marca}<br>
+                                            Motor: ${resposta.NomeMotor}
+                                            `;
                 })
                 // cardErro.style.display = "block";
 
@@ -186,6 +226,11 @@
         function sumirMensagem() {
             cardErro.style.display = "none"
         }
+
+        for (i = 0; i < piloto; i++) {
+            imagem_piloto1.innerHTML = `${imagem_carro[i]}`
+        }
+
     }
 
 
@@ -203,14 +248,22 @@
         //         "Content-Type": "application/json"
         //     }
         // }).then(function (resposta) {
-            fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/comparativo/piloto_one/${piloto}`, { cache: 'no-store' }).then(function (response) {
             console.log("resposta: ", response);
 
             if (response.ok) {
 
                 response.json().then(function (resposta) {
-                    console.log("resposta obtida", resposta)
-                    comparacao2.innerHTML = `${resposta}`;
+                    console.log("resposta = obtida", resposta)
+                    console.log(resposta)
+                    var respostaJSON = JSON.stringify(resposta)
+                    comparacao2.innerHTML = `Nome:${resposta.nome}<br>
+                                            Idade:${resposta.idade}<br>
+                                            Nacionalidade:${resposta.nacionalidade}<br>
+                                            Carro:${resposta.modelo}<br>
+                                            Marca:${resposta.marca}<br>
+                                            Motor:${resposta.NomeMotor}
+                                            `;
                 })
                 // cardErro.style.display = "block";
 
@@ -232,5 +285,13 @@
         function sumirMensagem() {
             cardErro.style.display = "none"
         }
+
+        for (i = 0; i < piloto; i++) {
+            imagem_piloto2.innerHTML = `${imagem_carro[i]}`
+        }
+
+
     }
+
+    document.getElementById(b_usuario).innerHTML = '${sessionStorage.b_usuario}'
 </script>

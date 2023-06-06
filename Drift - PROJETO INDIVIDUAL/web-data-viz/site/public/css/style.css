@@ -3,8 +3,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Dosis', sans-serif;
   background-color: black;
+  overflow: hidden;
+}
+
+.grafico {
+  width: 550px;
+  height: 300px;
+  background-color: white;
 }
 
 .container {
@@ -256,6 +263,9 @@ input {
   justify-content: space-evenly;
   align-items: center;
   border-right: 3px solid #ff0000;
+  -webkit-box-shadow: 0px 11px 41px -6px rgba(255,0,0,1);
+  -moz-box-shadow: 0px 11px 41px -6px rgba(255,0,0,1);
+  box-shadow: 0px 11px 41px -6px rgba(255,0,0,1);
   background-color: #ffffff;
   /* border: 3px solid pink; */
 }
@@ -342,3 +352,131 @@ input {
 .simulador .container {
   flex-direction: column
 }
+.regua {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.rank {
+  color: white;
+}
+
+#comparacao1 {
+height: 140px;
+font-weight: 600;
+color: white;
+font-size: 18px;
+
+}
+
+#comparacao2 {
+  height: 140px;
+  font-weight: 600;
+  color: white;
+  font-size: 18px;
+  }
+
+  #bt_selec {
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    height: 34px;
+    width: 75px;
+  }
+
+  .piloto_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 0, 0, 0.8);
+    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+  }
+
+  .piloto_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 0, 0, 0.8);
+    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+  }
+
+  #combo1 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    height: 30px;
+    width: 120px;
+  }
+
+  #combo2 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    height: 30px;
+    width: 120px;
+  }
+
+  .imagem_veiculo {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    padding-left: 7%;
+    flex-direction: row;
+    width: 100vw;
+    height: fit-content;
+  }
+
+  #imagem_piloto1 {
+    display: flex; 
+    margin-top: 30px;  
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+  }
+
+  #imagem_piloto2 {
+    display: flex; 
+    margin-top: 30px;  
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+  }
+
+  .imagem_plotar {
+    width: 200px;
+  }
+
+  .container_piloto1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container_piloto2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulinho {
+    color: white;
+    padding-left: 20%;
+  }
+
+  .tela {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }

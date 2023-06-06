@@ -90,8 +90,9 @@ select * from motor;
 select * from piloto join veiculo 
 	on fkVeiculo = idVeiculo 
     join motor on fkMotor = idMotor;
+    
 
-select p.nome, p.idade, p.nacionalidade, v.modelo, v.marca, m.nome as 'Nome Motor' from piloto p join veiculo v 
+select p.nome, p.idade, p.nacionalidade, v.modelo, v.marca, m.nome as 'NomeMotor' from piloto p join veiculo v 
 	on fkVeiculo = idVeiculo 
     join motor m on fkMotor = idMotor where idPiloto = 1
 		order by idPiloto;
